@@ -1,32 +1,58 @@
-# React + TypeScript + Vite
+# TaskFlow — Gestor de tareas minimalista ✅
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Aplicación de gestión de tareas enfocada en claridad y velocidad: prioridades, filtros, progreso en tiempo real y modo oscuro. Todo persiste en el navegador, sin backend.
 
-Currently, two official plugins are available:
+![TaskFlow en modo oscuro](docs/preview-dark.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Funcionalidades
 
-## React Compiler
+- **CRUD completo** de tareas: crear, editar en línea (doble clic), completar y eliminar
+- **Prioridades** (baja / media / alta) con indicador de color
+- **Filtros** por estado: todas, activas y completadas
+- **Anillo de progreso** que se actualiza en tiempo real
+- **Persistencia local** con `localStorage` (tus tareas siguen ahí al recargar)
+- **Modo claro / oscuro** con preferencia guardada
+- **Microinteracciones**: animaciones sutiles al agregar, completar y pasar el cursor
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Stack
 
-## Expanding the Oxlint configuration
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=flat&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## 🏗️ Arquitectura
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```
+src/
+├── components/     # UI por responsabilidad (Header, Composer, Filters, TaskItem…)
+├── hooks/          # Lógica reutilizable (useTasks, useTheme, useLocalStorage)
+├── types.ts        # Modelo de dominio (Task, Priority, Filter)
+└── App.tsx         # Composición de la vista
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Estado y persistencia viven en hooks desacoplados de la UI, de modo que los componentes se mantienen declarativos y fáciles de testear.
+
+## 🚀 Ejecución local
+
+```bash
+git clone https://github.com/Sagudelo01/task-flow.git
+cd task-flow
+npm install
+npm run dev
+```
+
+Abre [http://localhost:5173](http://localhost:5173).
+
+### Scripts
+
+| Comando | Descripción |
+|---|---|
+| `npm run dev` | Servidor de desarrollo con HMR |
+| `npm run build` | Build de producción |
+| `npm run preview` | Previsualiza el build |
+| `npm run lint` | Linter (Oxlint) |
+
+## 🖼️ Modo claro
+
+![TaskFlow en modo claro](docs/preview-light.png)
