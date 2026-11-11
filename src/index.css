@@ -54,7 +54,6 @@ body {
   color: #e9e7f2;
 }
 
-/* Ambient gradient backdrop */
 .aurora::before {
   content: '';
   position: fixed;
@@ -72,7 +71,6 @@ body {
   animation: pop-in 0.28s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
-/* Custom checkbox tick */
 @keyframes draw-check {
   to {
     stroke-dashoffset: 0;
@@ -90,7 +88,6 @@ body {
   background: rgba(124, 92, 255, 0.3);
 }
 
-/* Minimal scrollbar */
 *::-webkit-scrollbar {
   width: 10px;
   height: 10px;
