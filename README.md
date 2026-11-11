@@ -1,39 +1,38 @@
-# TaskFlow — Gestor de tareas minimalista ✅
+# TaskFlow
 
-Aplicación de gestión de tareas enfocada en claridad y velocidad: prioridades, filtros, progreso en tiempo real y modo oscuro. Todo persiste en el navegador, sin backend.
+A minimal task manager focused on speed and clarity. Add tasks with a priority, filter by state, watch progress update as you go, and switch between light and dark themes. Everything is stored in the browser, so there is no backend to run.
 
-![TaskFlow en modo oscuro](docs/preview-dark.png)
+![TaskFlow in dark mode](docs/preview-dark.png)
 
-## ✨ Funcionalidades
+## Features
 
-- **CRUD completo** de tareas: crear, editar en línea (doble clic), completar y eliminar
-- **Prioridades** (baja / media / alta) con indicador de color
-- **Filtros** por estado: todas, activas y completadas
-- **Anillo de progreso** que se actualiza en tiempo real
-- **Persistencia local** con `localStorage` (tus tareas siguen ahí al recargar)
-- **Modo claro / oscuro** con preferencia guardada
-- **Microinteracciones**: animaciones sutiles al agregar, completar y pasar el cursor
+- Create, edit inline (double click), complete and delete tasks
+- Low / medium / high priority with a color indicator
+- Filter by all, active or completed
+- Progress ring that reflects completion in real time
+- Tasks and theme preference persist in `localStorage`
+- Light and dark themes
 
-## 🛠️ Stack
+## Stack
 
-![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat&logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=flat&logo=vite&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
+- React 19 with TypeScript
+- Vite
+- Tailwind CSS v4
+- Oxlint
 
-## 🏗️ Arquitectura
+## Architecture
 
 ```
 src/
-├── components/     # UI por responsabilidad (Header, Composer, Filters, TaskItem…)
-├── hooks/          # Lógica reutilizable (useTasks, useTheme, useLocalStorage)
-├── types.ts        # Modelo de dominio (Task, Priority, Filter)
-└── App.tsx         # Composición de la vista
+├── components/   UI by responsibility (Header, Composer, Filters, TaskItem…)
+├── hooks/        Reusable logic (useTasks, useTheme, useLocalStorage)
+├── types.ts      Domain model (Task, Priority, Filter)
+└── App.tsx       View composition
 ```
 
-Estado y persistencia viven en hooks desacoplados de la UI, de modo que los componentes se mantienen declarativos y fáciles de testear.
+State and persistence live in hooks that are decoupled from the UI, which keeps the components declarative.
 
-## 🚀 Ejecución local
+## Running locally
 
 ```bash
 git clone https://github.com/Sagudelo01/task-flow.git
@@ -42,17 +41,15 @@ npm install
 npm run dev
 ```
 
-Abre [http://localhost:5173](http://localhost:5173).
+The app runs at `http://localhost:5173`.
 
-### Scripts
-
-| Comando | Descripción |
+| Script | Description |
 |---|---|
-| `npm run dev` | Servidor de desarrollo con HMR |
-| `npm run build` | Build de producción |
-| `npm run preview` | Previsualiza el build |
-| `npm run lint` | Linter (Oxlint) |
+| `npm run dev` | Start the dev server |
+| `npm run build` | Production build |
+| `npm run preview` | Serve the production build |
+| `npm run lint` | Run Oxlint |
 
-## 🖼️ Modo claro
+## Light mode
 
-![TaskFlow en modo claro](docs/preview-light.png)
+![TaskFlow in light mode](docs/preview-light.png)
