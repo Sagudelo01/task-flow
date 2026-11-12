@@ -2,6 +2,8 @@
 
 A minimal task manager focused on speed and clarity. Add tasks with a priority, filter by state, watch progress update as you go, and switch between light and dark themes. Everything is stored in the browser, so there is no backend to run.
 
+**Live demo:** [task-flow-gamma-nine.vercel.app](https://task-flow-gamma-nine.vercel.app)
+
 ![TaskFlow in dark mode](docs/preview-dark.png)
 
 ## Features
