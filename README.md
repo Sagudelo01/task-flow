@@ -49,6 +49,7 @@ The app runs at `http://localhost:5173`.
 | `npm run build` | Production build |
 | `npm run preview` | Serve the production build |
 | `npm run lint` | Run Oxlint |
+| `npm test` | Run the test suite (Vitest) |
 
 ## Light mode
 
